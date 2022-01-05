@@ -16,11 +16,11 @@ Your task is to create an application that allows a painter decorator to manage 
 
 ### MVP
 
-A room should:
+<!-- A room should:
 
 - have an area in square meters
 - should start not painted
-- should be able to be painted
+- should be able to be painted -->
 
 <!-- A paint can should:
 

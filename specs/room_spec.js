@@ -24,6 +24,4 @@ describe("Room", function(){
         const actual = room.painted;
         assert.strictEqual(actual, true);
     });
-
-
 })
