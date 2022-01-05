@@ -43,8 +43,12 @@ describe("Decorator", function(){
         assert.strictEqual(actual, false);
     });
 
-    // it('should paint room if enough stock', function(room){
-    //     decorator
-    // })
+    it('should paint room if enough stock__true', function(room){
+        decorator.addPaint();
+        decorator.addPaint();
+        decorator.decoratorPaintRoom(room);
+        actual = room.painted;
+        assert.strictEqual(actual, true);
+    });
 
 });

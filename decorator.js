@@ -1,6 +1,3 @@
-const Paint = require("./paint");
-const Room = require("./room.js")
-
 const Decorator = function(stock = 0) {
     this.stock = stock;
 };
@@ -21,6 +18,16 @@ Decorator.prototype.hasEnoughPaint = function(room) {
     }
     else {
         return false
+    }
+};
+
+Decorator.prototype.decoratorPaintRoom = function(room) {
+    result = this.hasEnoughPaint(room);
+    if (result === true) {
+        room.painted = true
+    }
+    else {
+        room.painted = false
     }
 };
 
