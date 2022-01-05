@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Decorator = require('../decorator.js');
 const Paint = require('../paint.js');
+const Room = require('../room.js');
 
 
 describe("Decorator", function(){
@@ -9,6 +10,7 @@ describe("Decorator", function(){
     beforeEach(function(){
         decorator = new Decorator()
         paint = new Paint()
+        room = new Room(10)
     });
 
     it('should have empty stock', function(){
@@ -28,5 +30,21 @@ describe("Decorator", function(){
         const actual = decorator.calculateTotalPaint();
         assert.strictEqual(actual, 10);
     });
+
+    it('should calculate if enough paint for room__true', function(){
+        decorator.addPaint();
+        decorator.addPaint();
+        const actual = decorator.hasEnoughPaint(room);
+        assert.strictEqual(actual, true);
+    });
+
+    it('should calculate if enough paint for room__false', function(){
+        const actual = decorator.hasEnoughPaint(room);
+        assert.strictEqual(actual, false);
+    });
+
+    // it('should paint room if enough stock', function(room){
+    //     decorator
+    // })
 
 });
