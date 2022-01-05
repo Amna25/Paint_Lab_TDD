@@ -1,4 +1,4 @@
-const Paint = function(amount) {
+const Paint = function(amount = 5) {
     this.amount = amount
 };
 

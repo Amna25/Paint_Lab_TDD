@@ -1,5 +1,6 @@
 const assert = require('assert');
 const Decorator = require('../decorator.js');
+const Paint = require('../paint.js');
 
 
 describe("Decorator", function(){
@@ -7,6 +8,7 @@ describe("Decorator", function(){
 
     beforeEach(function(){
         decorator = new Decorator()
+        paint = new Paint()
     });
 
     it('should have empty stock', function(){
@@ -20,4 +22,11 @@ describe("Decorator", function(){
         assert.strictEqual(actual, 1)
     });
 
-})
+    it('should calculate total litres of paint', function(){
+        decorator.addPaint();
+        decorator.addPaint();
+        const actual = decorator.calculateTotalPaint();
+        assert.strictEqual(actual, 10);
+    });
+
+});
